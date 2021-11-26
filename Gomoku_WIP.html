@@ -8,7 +8,7 @@
  
   
 }
-#controls {
+#clock {
   margin: auto;
   width: 50%;
  text-align:center 
@@ -21,7 +21,7 @@
 <body onload="">
 <div>
 
-<div id="images"></div>
+<div id="clock"> clock </div>
 <canvas style="border:3px solid #000000;" id="canvas" width="1000" height="1000" onclick="place(event)"></canvas>
 
 <div id="controls">
@@ -47,7 +47,9 @@ var runs;
 var canvas = document.getElementById("canvas");
 var context = canvas.getContext("2d");
 var score = 0; //decide how to implement this later
-var duration = 0; //implement thislater as well
+var duration; //array of form [minutes, seconds]
+var beginTime;
+var gameOver;
 function errorReport(x){
 	document.getElementById("EventBox").innerHTML= "Error: " + x;
 }
@@ -111,8 +113,11 @@ class Game{
 
 function createGame(size,rows){
 	NewGame = new Game(size,rows);
+	gameOver = false;
 	var pieces = NewGame.getPieces();
 	drawBoard(context, size, rows, pieces);
+	beginTime = performance.now();
+	duration = timer();
 	
 	document.body.addEventListener( 'click', function ( event ) {
 		if( event.target.id == 'canvas' ) {
@@ -124,14 +129,16 @@ function createGame(size,rows){
 				if (runs[0][2]!=0){
 					NewGame.gameOver = true;
 					let winner = 0; //player one, white, 0
-					gameOver(0);
-					callOut(NewGame.turn-1, score, duration, winner)
+					gameOver = true;
+					endGame(0);
+					callOut(NewGame.turn-1, score, duration, winner) //since the turn is advanced after every piece is played, one is subtracted to get the trn that was just played
 				}
 				if (runs[1][2]!=0){
 					NewGame.gameOver = true;
 					let winner = 1; //player two, black, 1
-					gameOver(1);
-					callOut(NewGame.turn-1, score, duration, winner)
+					gameOver = true;
+					endGame(1);
+					callOut(NewGame.turn-1, score, duration, winner) 
 				}
 			}
 		};
@@ -141,7 +148,7 @@ function createGame(size,rows){
 function callOut(turn, score, duration, winner){ //This is waiting to be written either by me or my partner, this is the hook into the server side
 	
 }
-function gameOver(){
+function endGame(){
 	
 }
 function getRuns(pieces, board){
@@ -353,6 +360,31 @@ try{
 	*/
 }
 
+function timer() { //this function updates the timer and returns the number of minutes and second the game has gone on for
+	var endTime = performance.now();
+	var timeDiff = endTime - beginTime;
+	let m = Math.floor((timeDiff/1000)/60);
+	let s = Math.floor((timeDiff/1000)%60);
+	let mp = checkTime(m);
+	let sp = checkTime(s);
+	document.getElementById('clock').innerHTML = mp + ":" + sp;
+	if(!gameOver){
+		setTimeout(timer, 1000);
+	}
+	else{
+		return[m,s]
+	}
+}
+
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
 function draw(e) {
     var pos = getMousePos(canvas, e);
     posx = pos.x;
