@@ -18,10 +18,12 @@
                     <form action="login.php" method="post">
                         <input type="text" name="userid" placeholder="Username or email">
                         <input type="text" name="passd" placeholder="Password">
-                        <button type="submit" name="login">press to Login</button>
+                        <button type="submit" name="login-pressed">press to Login</button>
                     </form>
                     <a href="signup.php">Signup</a>
-                    <form action=""
+                    <form action="signout.php" method="post">
+                        <button type="submit" name="logout-pressed">Logout</button>
+                    </form>
                 </div>
             </nav>
         </header>
