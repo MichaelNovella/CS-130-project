@@ -5,10 +5,6 @@ require "heading-nav.php";
 <html lang="en">
 <head>
 <link rel="stylesheet" href="external.css">
-<<<<<<< HEAD
-
-=======
->>>>>>> f66da45bece20503f316c3016113206acea49a66
 <meta charset="UTF-8">
 </head>
 
