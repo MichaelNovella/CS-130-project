@@ -14,11 +14,17 @@ $sql = "CREATE TABLE IF NOT EXISTS userboard (
     score INT(30),
     gameswon INT(6),
     games INT(6),
-    duration INT(190) 
+    duration INT(19) 
     )";
 if ($conn->query($sql) === TRUE) {
     //echo "New record created successfully<br>";
 } else {
     //echo "Error: " . $sql . "<br>" . $connection->error ."<br>";
 }
+
+$sql ="CREATE TABLE IF NOT EXISTS users(
+    idUser int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    usernamesid TINYTEXT NOT NULL,
+    email_id TINYTEXT NOT NULL,
+    pwdusers LONGTEXT NOT NULL)"
 ?>
