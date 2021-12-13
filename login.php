@@ -24,6 +24,11 @@ if (isset($_POST['login-pressed'])) {
                 session_start();
                 $_SESSION['userid']= $row['idUser'];
                 $_SESSION['usernameloggedin']= $row['usernamesid'];
+
+                $sql ="INSERT INTO userboard (ids) VALUES (?)";
+                $stmt = $conn->prepare($sql);
+                $stmt->bind_param("s", $row['usernamesid']);
+                $stmt->execute();
                 header("Location: index.php?signing=pass");
             exit();
             }
