@@ -1,3 +1,6 @@
+<?php
+require "heading-nav.php";
+?>
 <!DOCTYPE html>
 <html>
     <head>
