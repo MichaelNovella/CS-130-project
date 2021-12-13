@@ -4,7 +4,8 @@ session_start();
 <!DOCTYPE html>
 <html>
     <head>
-    <style>
+    <link rel="stylesheet" href="external.css">
+    <!-- <style>
         .logo-image{
     width: 60px;
     height: 60px;
@@ -69,7 +70,7 @@ li a:hover:not(.active) {
 .active {
   background-color: #04AA6D;
 }
-        </style>
+        </style> -->
     </head>
     <body>
         <header>
