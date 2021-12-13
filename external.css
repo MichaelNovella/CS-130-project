@@ -8,6 +8,7 @@ div.wrapperhelp {
     padding: 50px;
     margin: 20px;
   }
+<<<<<<< HEAD
 .logo-image{
     width: 46px;
     height: 46px;
@@ -91,3 +92,26 @@ ul {
     display: table;
     clear: both;
   } 
+=======
+#content_box {
+  margin: auto;
+  width: 60%;
+}
+#display_box {
+  margin: auto;
+  width: 200px;
+  text-align:center;
+  display:inline-block;
+}
+#display_box label{
+	display:inline-block;
+}
+#display_box input{
+	display:inline-block;
+}
+#clock {
+  margin: auto;
+  width: 50%;
+ text-align:center;
+}
+>>>>>>> f9d430d612e9a2c13a4e7c8fda1a3a4e9bf42b51
