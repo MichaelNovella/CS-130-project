@@ -2,12 +2,12 @@
 require "heading-nav.php";
 
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
     <head>
     <link rel="stylesheet" href="external.css">
     </head>
-    <body>
+    <body> -->
         <div class="container">
         <?php
         if (isset($_SESSION['userid'])) {

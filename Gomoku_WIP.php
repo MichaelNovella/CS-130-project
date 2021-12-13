@@ -1,14 +1,14 @@
 <?php
 require "heading-nav.php";
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
 <link rel="stylesheet" href="external.css">
 <meta charset="UTF-8">
 </head>
 
-<body onload="">
+<body onload=""> -->
 <div>
 <div id="userInfo"> <?php echo "Currently signed in: ".$_SESSION['usernameloggedin'];?> </div> <!-- Display the current user logged in here. -->
 <div id="clock"> clock </div>

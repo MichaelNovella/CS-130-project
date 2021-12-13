@@ -1,12 +1,12 @@
 <?php
 require "heading-nav.php";
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
     <head>
 
     </head>
-    <body>
+    <body> -->
         
     </body>
 </html>
