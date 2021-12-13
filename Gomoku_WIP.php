@@ -318,7 +318,7 @@ function callOut(turn, score, duration, winner){ //This is waiting to be written
 		  return false;
 		}
 		httpRequest.onreadystatechange = Unloaddb;
-		httpRequest.open('POST','send.php');  
+		httpRequest.open('POST','send.php');  //sets the file to send to
 		httpRequest.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 		httpRequest.send('turns='+ turn+'&score='+ score+'&duration='+ duration+'&winner'+ winner); // send the variables with value set defined by str
 }

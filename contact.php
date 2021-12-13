@@ -7,6 +7,7 @@ require "heading-nav.php";
         <link rel="stylesheet" href="external.css">
     </head>
     <body> -->
+        <!-- Basic contact form -->
         <h1>Team members</h1>
         <h2>Daniel Gross</h2>
         <p>A much delayed CompSci senior who would like to work abroad. Primary areas of interest are AI and automation. Can be contacted here:</p>

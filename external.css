@@ -1,3 +1,4 @@
+/* external css to be used across the pages these mostly help with the presentaiton of the pages*/
 a[href^="mailto"]::before {
     content: "📧 ";
 }

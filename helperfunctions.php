@@ -8,6 +8,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: ". $conn->connect_error);
 }
+//creates the table that will be used for the leaderboard
 $sql = "CREATE TABLE IF NOT EXISTS userboard (
     ids VARCHAR(30),
     turns INT(30),
@@ -21,7 +22,7 @@ if ($conn->query($sql) === TRUE) {
 } else {
     //echo "Error: " . $sql . "<br>" . $connection->error ."<br>";
 }
-
+//this creates the user table incase it wasn't created in the first place
 $sql ="CREATE TABLE IF NOT EXISTS users(
     idUser int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
     usernamesid TINYTEXT NOT NULL,

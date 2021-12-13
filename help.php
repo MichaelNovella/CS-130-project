@@ -1,12 +1,7 @@
 <?php
 require "heading-nav.php";
 ?>
-<!-- <!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" href="external.css">
-    </head>
-    <body> -->
+<!-- A help file for the game that you need to log into to play -->
         <div class="wrapperhelp">
             <section>
                 <p>This is a basic game of gomoku.</p>

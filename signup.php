@@ -1,15 +1,7 @@
 <?php
 require "heading-nav.php";
 ?>
- <!-- <!DOCTYPE html>
-<html>
-    <head>
-         <link rel="stylesheet" href="external.css"> 
-        <style>
-            
-        </style>
-    </head>
-    <body>  -->
+ <!-- This is to help with signing up for the service  -->
         <div class="container">
             <form action="signup.inc.php" method="post">
             <div class="row">

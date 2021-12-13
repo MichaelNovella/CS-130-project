@@ -1,14 +1,9 @@
 <?php
 require "heading-nav.php";
 ?>
-<!-- <!DOCTYPE html>
-<html>
-    <head>
-
-    </head>
-    <body> -->
+<!-- This is where the leaderboard will be displayed -->
         <?php
-        
+
         ?>
     </body>
 </html>
