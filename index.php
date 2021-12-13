@@ -10,8 +10,9 @@ require "heading-nav.php";
         }
         else{ 
             // a condition that can direct the user to what they can do
-            echo '<p>You have to log in to play the game or <a href="signup.php">Sign-up</a></p>';
-        }
+            ?>
+            <p>You have to log in to play the game or <a href="signup.php">Sign-up</a></p>
+        <?php }
         ?>
         </div>
     </body>

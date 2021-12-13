@@ -95,7 +95,16 @@ ul {
     display: table;
     clear: both;
   } 
-
+table{
+    width: 100%;
+}
+table, th, td {
+    border: 1px solid black;
+  }
+  
+th{
+    text-align: center;
+}
 #content_box {
   margin: auto;
   width: 60%;

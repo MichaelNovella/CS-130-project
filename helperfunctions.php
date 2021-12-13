@@ -13,8 +13,7 @@ $sql = "CREATE TABLE IF NOT EXISTS userboard (
     ids VARCHAR(30),
     turns INT(30),
     score INT(30),
-    gameswon INT(6),
-    games INT(6),
+    won INT(6),
     duration INT(19) 
     )";
 if ($conn->query($sql) === TRUE) {

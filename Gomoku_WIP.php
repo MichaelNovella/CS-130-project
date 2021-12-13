@@ -1,14 +1,4 @@
-<?php
-require "heading-nav.php";
-?>
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-<link rel="stylesheet" href="external.css">
-<meta charset="UTF-8">
-</head>
-
-<body onload=""> -->
+<!--  This is the gomoku game it will be used to play and send information to the server -->
 <div>
 <div id="userInfo"> <?php echo "Currently signed in: ".$_SESSION['usernameloggedin'];?> </div> <!-- Display the current user logged in here. -->
 <div id="clock"> clock </div>
@@ -180,7 +170,7 @@ function createGame(size,rows){ //this is the function that starts the game and 
 	var pieces = NewGame.getPieces();
 	drawBoard(context, size, rows, pieces);
 	beginTime = performance.now();
-	duration = timer();
+	//duration = timer();
 	runs = new Array(2);
 	
 	document.body.addEventListener( 'click', function ( event ) {
@@ -197,14 +187,14 @@ function createGame(size,rows){ //this is the function that starts the game and 
 					let winner = false; //player one, white, 0
 					gameOver = true;
 					endGame(winner);
-					callOut(NewGame.turn-1, score, duration, winner) //since the turn is advanced after every piece is played, one is subtracted to get the trn that was just played
+					callOut(NewGame.turn-1, score, timer(), winner) //since the turn is advanced after every piece is played, one is subtracted to get the trn that was just played
 				}
 				if (runs[1][0][2]!=0){ //these two blocks check wether the game has been won
 					NewGame.gameOver = true;
 					let winner = true; //player two, black, 1
 					gameOver = true;
 					endGame(winner);
-					callOut(NewGame.turn-1, score, duration, winner) //since the turn is advanced after every piece is played, one is subtracted to get the trn that was just played
+					callOut(NewGame.turn-1, score, timer(), winner) //since the turn is advanced after every piece is played, one is subtracted to get the trn that was just played
 				}
 			}
 		};
@@ -317,10 +307,11 @@ function callOut(turn, score, duration, winner){ //This is waiting to be written
 		  alert('Cannot create an XMLHTTP instance');
 		  return false;
 		}
-		httpRequest.onreadystatechange = Unloaddb;
+		// httpRequest.onreadystatechange = Unloaddb;
 		httpRequest.open('POST','send.php');  //sets the file to send to
 		httpRequest.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-		httpRequest.send('turns='+ turn+'&score='+ score+'&duration='+ duration+'&winner'+ winner); // send the variables with value set defined by str
+		var playerwin = !winner;
+		httpRequest.send('turns='+ turn+'&score='+ score+'&duration='+ duration+'&winner='+ Number(playerwin)); // send the variables with value set defined by str
 }
 function endGame(winner){//this function is called when the game ends, currently it simply reports the end of the game and the winner to the eventBox
 	x = "1";
@@ -626,7 +617,7 @@ function timer() { //this function updates the timer and returns the number of m
 		setTimeout(timer, 1000);
 	}
 	else{
-		return[m,s]
+		return (m*60)+s;
 	}
 }
 function checkTime(i) {//this is aultility function for clock functionality

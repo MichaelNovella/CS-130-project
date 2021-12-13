@@ -1,6 +1,7 @@
 <?php
 //this is to send the info from the ended game to the server
 include "helperfunctions.php";
+session_start();
 // turns='+ turn+'&score='+ score+'&duration='+ duration+'&winner'+ winner
 
 // $sql = "CREATE TABLE IF NOT EXISTS userboard (
@@ -20,11 +21,11 @@ include "helperfunctions.php";
 $turnss =$_POST['turns'];
 $scores =$_POST['score'];
 $wongame = $_POST['winner'];
-$sql ="SELECT MAX(games) FROM userboard WHERE ids=".$_SESSION['usernameloggedin'];
-$result = $conn->query($sql);
-$gamesdone = $result + 1;
+// $sql ="SELECT MAX(games) FROM userboard WHERE ids=".$_SESSION['usernameloggedin'];
+// $result = $conn->query($sql);
+// $gamesdone = $result + 1;
 $durationtime =$_POST['duration'];
-$stmt = $conn->prepare("INSERT INTO userboard (ids,turns,score,gameswon,games,duration)  VALUES(?.?,?,?,?,?)");
-$stmt->bind_param("siiiii", $_SESSION['usernameloggedin'],$turnss,$scores,$wongame,$gamesdone,$durationtime);
+$stmt = $conn->prepare("INSERT INTO userboard (ids,turns,score,won,duration)  VALUES(?,?,?,?,?)");
+$stmt->bind_param("siiii", $_SESSION['usernameloggedin'],$turnss,$scores,$wongame,$durationtime);
 $stmt->execute();
 ?>
