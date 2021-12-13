@@ -95,17 +95,17 @@ ul {
     display: table;
     clear: both;
   } 
-table{
-    width: 100%;
+  table {
+    border-spacing: 0;
 }
-/* table, th, td {
-    border: 1px solid #b1102b;
-  } */
-  th:not(:last-child), td:not(:last-child) {
+
+th:not(:last-child), td:not(:last-child) {
     border-right: 1px solid #b1102b;
 }
-th{
-    text-align: center;
+
+th,
+:not(:last-child) td {
+    border-bottom: 1px solid #b1102b;
 }
 #content_box {
   margin: auto;
