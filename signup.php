@@ -1,15 +1,15 @@
 <?php
 require "heading-nav.php";
 ?>
-<!-- <!DOCTYPE html>
+ <!-- <!DOCTYPE html>
 <html>
     <head>
-        <!-- <link rel="stylesheet" href="external.css"> -->
+         <link rel="stylesheet" href="external.css"> 
         <style>
             
         </style>
     </head>
-    <body> -->
+    <body>  -->
         <div class="container">
             <form action="signup.inc.php" method="post">
             <div class="row">
