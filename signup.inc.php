@@ -73,6 +73,7 @@ if(isset($_POST["signupsub"])){
         }
         
     }
+    
     $stmt->close();
     $conn->close();
 
