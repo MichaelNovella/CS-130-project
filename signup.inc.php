@@ -47,12 +47,12 @@ if(isset($_POST["signupsub"])){
             $stmt->bind_param("sss", $username,$email,$hasspasse);//sends everything to the table
             $stmt->execute();
             //this creates a dummy user from the new user to the leaderboard for being your first time
-            $sql ="INSERT INTO userboard (ids,turns,score,gameswon,games,duration) VALUES (?,?,?,?,?,?)";
-                $stmt = $conn->prepare($sql);
-                $z = 0;
-                $stmt->bind_param("siiiii", $username,$z,$z,$z,$z,$z);
-                $stmt->execute();
-            header("Location: signup.php?signup=passed");//this is confirm to the user to sign in with their new login credentials
+            // $sql ="INSERT INTO userboard (ids,turns,score,gameswon,games,duration) VALUES (?,?,?,?,?,?)";
+            //     $stmt = $conn->prepare($sql);
+            //     $z = 0;
+            //     $stmt->bind_param("siiiii", $username,$z,$z,$z,$z,$z);
+            //     $stmt->execute();
+            // header("Location: signup.php?signup=passed");//this is confirm to the user to sign in with their new login credentials
             exit();
         }
         
