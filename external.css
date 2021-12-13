@@ -5,7 +5,7 @@ a[href^="mailto"]::before {
 div.wrapperhelp {
     background-color: lightgrey;
     width: 300px;
-    border: 15px solid #b1102b;
+    border: 15px solid #13284c;
     padding: 50px;
     margin: 20px;
   }
@@ -24,7 +24,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #13284c;
     position: fixed;
     top: 0;
     width: 100%;
@@ -47,7 +47,7 @@ ul {
   }
   
   .active {
-    background-color: #04AA6D;
+    background-color: #b1102b;
   }
   /* input[type=text], select, textarea {
     width: 100%;
@@ -98,10 +98,12 @@ ul {
 table{
     width: 100%;
 }
-table, th, td {
-    border: 1px solid black;
-  }
-  
+/* table, th, td {
+    border: 1px solid #b1102b;
+  } */
+  th:not(:last-child), td:not(:last-child) {
+    border-right: 1px solid #b1102b;
+}
 th{
     text-align: center;
 }
