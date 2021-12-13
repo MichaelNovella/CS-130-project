@@ -68,6 +68,11 @@ if(isset($_POST["signupsub"])){
             $stmt = $conn->prepare($sql); 
             $stmt->bind_param("sss", $username,$email,$hasspasse);
             $stmt->execute();
+            $sql ="INSERT INTO userboard (ids,turns,score,gameswon,games,duration) VALUES (?,?,?,?,?,?)";
+                $stmt = $conn->prepare($sql);
+                $z = 0;
+                $stmt->bind_param("siiiii", $username,$z,$z,$z,$z,$z);
+                $stmt->execute();
             header("Location: signup.php?signup=passed");
             exit();
         }

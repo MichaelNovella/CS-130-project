@@ -25,11 +25,11 @@ if (isset($_POST['login-pressed'])) {
                 $_SESSION['userid']= $row['idUser'];
                 $_SESSION['usernameloggedin']= $row['usernamesid'];
 
-                $sql ="INSERT INTO userboard (ids,turns,score,gameswon,games,duration) VALUES (?,?,?,?,?,?)";
-                $stmt = $conn->prepare($sql);
-                $z = 0;
-                $stmt->bind_param("siiiii", $row['usernamesid'],$z,$z,$z,$z,$z);
-                $stmt->execute();
+                // $sql ="INSERT INTO userboard (ids,turns,score,gameswon,games,duration) VALUES (?,?,?,?,?,?)";
+                // $stmt = $conn->prepare($sql);
+                // $z = 0;
+                // $stmt->bind_param("siiiii", $row['usernamesid'],$z,$z,$z,$z,$z);
+                // $stmt->execute();
                 header("Location: index.php?signing=pass");
             exit();
             }

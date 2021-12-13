@@ -7,6 +7,8 @@ require "heading-nav.php";
 
     </head>
     <body> -->
+        <?php
         
+        ?>
     </body>
 </html>
