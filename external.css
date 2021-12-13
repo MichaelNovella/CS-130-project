@@ -97,10 +97,12 @@ ul {
   } 
   table {
     border-spacing: 0;
+    width: 100%;
 }
 
 th:not(:last-child), td:not(:last-child) {
     border-right: 1px solid #b1102b;
+    margin: 0;
 }
 
 th,
