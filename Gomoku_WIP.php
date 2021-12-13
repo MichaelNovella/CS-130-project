@@ -4,30 +4,7 @@ require "heading-nav.php";
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style>
-#content_box {
-  margin: auto;
-  width: 60%;
-}
-#display_box {
-  margin: auto;
-  width: 200px;
-  text-align:center;
-  display:inline-block;
-}
-#display_box label{
-	display:inline-block;
-}
-#display_box input{
-	display:inline-block;
-}
-#clock {
-  margin: auto;
-  width: 50%;
- text-align:center;
-}
-</style>
-
+<link rel="stylesheet" href="external.css">
 <meta charset="UTF-8">
 </head>
 
