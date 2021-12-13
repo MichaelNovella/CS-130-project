@@ -8,7 +8,9 @@ div.wrapperhelp {
     padding: 50px;
     margin: 20px;
   }
-
+body {
+    margin-top: 90px;
+}
 .logo-image{
     width: 46px;
     height: 46px;
