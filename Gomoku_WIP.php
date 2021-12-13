@@ -4,36 +4,14 @@ require "heading-nav.php";
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style>
-#content_box {
-  margin: auto;
-  width: 60%;
-}
-#display_box {
-  margin: auto;
-  width: 200px;
-  text-align:center;
-  display:inline-block;
-}
-#display_box label{
-	display:inline-block;
-}
-#display_box input{
-	display:inline-block;
-}
-#clock {
-  margin: auto;
-  width: 50%;
- text-align:center;
-}
-</style>
+<link rel="stylesheet" href="external.css">
 
 <meta charset="UTF-8">
 </head>
 
 <body onload="">
 <div>
-<div id="userInfo"> Not logged in </div> <!-- Display the current suer logged in here. -->
+<div id="userInfo"> <?php echo "Currently signed in: ".$_SESSION['usernameloggedin'];?> </div> <!-- Display the current user logged in here. -->
 <div id="clock"> clock </div>
 <div id="content_box">
 <table>
@@ -333,17 +311,29 @@ function playForMe(game, depth, width, root){ //this is an expirimental bounded 
 		
 	alert("this should not happen.");
 }
+// callOut(NewGame.turn-1, score, duration, winner)
 function callOut(turn, score, duration, winner){ //This is waiting to be written by my partner, this is the hook into the server side
-	
+	httpRequest = new XMLHttpRequest(); // create the object
+		if (!httpRequest) { 
+		  alert('Cannot create an XMLHTTP instance');
+		  return false;
+		}
+		httpRequest.onreadystatechange = Unloaddb;
+		httpRequest.open('POST','send.php');  
+		httpRequest.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+		httpRequest.send('turns='+ turn+'&score='+ score+'&duration='+ duration+'&winner'+ winner); // send the variables with value set defined by str
 }
 function endGame(winner){//this function is called when the game ends, currently it simply reports the end of the game and the winner to the eventBox
 	x = "1";
 	if (winner){
 		x = "2";
+		
 	}
 	//dislplayUpdate(runs);
 	errorReport("The game is over. Winner is player " + x + ".",false);
+	
 }
+
 function getRuns(pieces, board, rows){//this function finds how many 3, 4, and 5 in a row a player has
 	var pot4 = [];
 	var pot5 = [];
