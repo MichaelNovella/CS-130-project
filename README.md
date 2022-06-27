@@ -7,5 +7,6 @@ The way to install this is by launching xampp, start up apache and php, setting 
 
 Game Images:
 
-![image](https://user-images.githubusercontent.com/82190132/176027210-5996bb86-fd06-4044-8ef3-e0653454045a.png)
+![image](https://user-images.githubusercontent.com/82190132/176027735-89eed15f-9cf1-40d9-96e8-9b2c3828ec01.png)
+
 
